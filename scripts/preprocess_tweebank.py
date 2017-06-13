@@ -296,17 +296,17 @@ def preprocess_tweebank4(in_fp, out_dir):
 
 
 if __name__ == '__main__':
-    input_fp = '/data/hugo/tweets/eng_tweets_min40/all_eng_tweets_min40.conll'
-    output_dir = '/data/hugo/tweets/variations/lowercase_br'
-    preprocess_tweebank1(input_fp, output_dir)
+#    input_fp = '/data/hugo/tweets/eng_tweets_min40/all_eng_tweets_min40.conll'
+#    output_dir = '/data/hugo/tweets/variations/lowercase_br'
+#    preprocess_tweebank1(input_fp, output_dir)
 
-    input_fp = '/data/hugo/tweets/eng_tweets_min40/all_eng_tweets_min40.conll'
-    output_dir = '/data/hugo/tweets/variations/lowercase_pos_br'
-    preprocess_tweebank2(input_fp, output_dir)
+#    input_fp = '/data/hugo/tweets/eng_tweets_min40/all_eng_tweets_min40.conll'
+#    output_dir = '/data/hugo/tweets/variations/lowercase_pos_br'
+#    preprocess_tweebank2(input_fp, output_dir)
 
-    input_fp = '/data/hugo/tweets/eng_tweets_min40/all_eng_tweets_min40.conll'
-    output_dir = '/data/hugo/tweets/variations/lowercase_pos_br_out_pos'
-    preprocess_tweebank3(input_fp, output_dir)
+#    input_fp = '/data/hugo/tweets/eng_tweets_min40/all_eng_tweets_min40.conll'
+#    output_dir = '/data/hugo/tweets/variations/lowercase_pos_br_out_pos'
+#    preprocess_tweebank3(input_fp, output_dir)
 
     input_fp = '/data/hugo/tweets/eng_tweets_min40/all_eng_tweets_min40.conll'
     output_dir = '/data/hugo/tweets/variations/lowercase_sr'
