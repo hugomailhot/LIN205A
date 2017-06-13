@@ -132,6 +132,7 @@ def preprocess_tweebank1(in_fp, out_dir):
         output_str = ' '.join(bracket(toks, head)[1:])
         src_strings.append(input_str)
         tgt_strings.append(output_str)
+    print('\n')
 
     with open(os.path.join(out_dir, 'src-all'), 'w') as src:
         src.write('\n'.join(src_strings))
@@ -184,6 +185,7 @@ def preprocess_tweebank2(in_fp, out_dir):
         output_str = ' '.join(bracket(toks, head)[1:])
         src_strings.append(input_str)
         tgt_strings.append(output_str)
+    print('\n')
 
     with open(os.path.join(out_dir, 'src-all'), 'w') as src:
         src.write('\n'.join(src_strings))
@@ -224,7 +226,7 @@ def preprocess_tweebank3(in_fp, out_dir):
         words = []
         # Build the word|feat1|feat2|feat3|... strings
         for tok in tweet: 
-            tok_feats = '|'.join([tok[FORM], tok[POS]])
+            tok_feats = '|'.join([tok[FORM].lower(), tok[POS]])
             words.append(tok_feats)
 
         input_str = ' '.join(words)
@@ -236,6 +238,7 @@ def preprocess_tweebank3(in_fp, out_dir):
         output_str = ' '.join(bracket(toks, head)[1:])
         src_strings.append(input_str)
         tgt_strings.append(output_str)
+    print('\n')
 
     with open(os.path.join(out_dir, 'src-all'), 'w') as src:
         src.write('\n'.join(src_strings))
@@ -276,18 +279,19 @@ def preprocess_tweebank4(in_fp, out_dir):
         words = []
         # Build the word|feat1|feat2|feat3|... strings
         for tok in tweet: 
-            tok_feats = '|'.join([tok[FORM], tok[POS]])
+            tok_feats = '|'.join([tok[FORM].lower(), tok[POS]])
             words.append(tok_feats)
 
         input_str = ' '.join(words)
 
         # tokens are 1-indexed in the dataset, 
         # adding '/////' root node simplifies everything
-        toks = ['/////'] + [x[POS] for x in tweet]
+        toks = ['/////'] + [x[FORM].lower() for x in tweet]
         head = [None] + [int(x[HEAD]) for x in tweet]
         output_str = ' '.join(transparse(toks, head))  # Here we use shift-reduce, and include LEFTWALL
         src_strings.append(input_str)
         tgt_strings.append(output_str)
+    print('\n')
 
     with open(os.path.join(out_dir, 'src-all'), 'w') as src:
         src.write('\n'.join(src_strings))
